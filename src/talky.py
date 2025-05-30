@@ -1,6 +1,5 @@
 from ml import inference
 import tkinter as tk
-# logic used: import packagename.modulename as module
 
 # Create and configure root window 
 root = tk.Tk()
