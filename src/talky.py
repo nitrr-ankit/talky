@@ -1,9 +1,10 @@
+from ml import inference
 import tkinter as tk
-import inference
+# logic used: import packagename.modulename as module
 
 # Create and configure root window 
 root = tk.Tk()
-root.title("Let's-Talk")
+root.title("Talky- Your Personal Assistant")
 root.minsize(200,400)
 root.maxsize(500,800)
 root.geometry("400x500+900+100")
@@ -12,7 +13,7 @@ root.geometry("400x500+900+100")
 # Button for submititng text
 def on_message():
     user_entry = text1.get("1.0", tk.END)
-    reply = inference.process_query(user_entry)
+    reply = inference.process_query(user_query=user_entry)
     response_label.configure(text = reply)
     text1.delete("1.0", tk.END)
     text1.mark_set(tk.INSERT, "1.0")
@@ -23,7 +24,7 @@ def handle_entry(event):
 
 # Add info and image to the window
 tk.Label(root, text = "Hi!! I am so happy to have you with me, let's talk").pack()
-image = tk.PhotoImage(file = "ml-analysis/resource/test.gif")
+image = tk.PhotoImage(file = "./resources/test.gif")
 tk.Label(root, image = image).pack()
 
 # Add input text box for user msg

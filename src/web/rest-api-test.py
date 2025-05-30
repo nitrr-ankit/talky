@@ -13,5 +13,4 @@ except requests.exceptions.HTTPError as errh:
     print(errh.args[0])
 else:
     print(f"Status Code is : {response.status_code}")
-
-print(f"Response is : {response.json()}")
+    print(f"Response is : {response.json()}")
